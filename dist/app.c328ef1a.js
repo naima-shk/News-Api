@@ -118,25 +118,14 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"app.js":[function(require,module,exports) {
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-var url = 'https://newsapi.org/v2/everything?q=tesla&from=2021-07-09&sortBy=publishedAt&apiKey=fb5eac411e5d40398d36bb4bb6d90bd2';
-fetch(url).then(function (response) {
-  return response.json();
-  /*here the data of recipes we are getting in form of json*/
-}).then(newsArray).catch(function (err) {
+var collapseWidthExample = document.getElementById('collapseWidthExample');
+var source = 'dawn-news';
+fetch('https://newsapi.org/v2/everything?q=tesla&from=2021-07-09&sortBy=publishedAt&apiKey=fb5eac411e5d40398d36bb4bb6d90bd2').then(function (response) {
+  console.log(response); // return response.json(); /*here the data  we are getting in form of json*/
+}).then(Array).catch(function (err) {
   console.log(err);
-}); // introducing function and giving the objects of data in arguments
-
-function newsArray(obj) {
-  var news = obj.results;
-  console.log(news);
-  console.log(_typeof(news)); // here using the map() function for printing the array of recipes
-
-  document.getElementById("main-container").innerHTML = news.map(function (News) {
-    return "\n    <div class=\"main\">\n      <div class=\"content\">\n        <img  src=\"".concat(News.image, "\" />\n        <div class=\"title\">").concat(News.title, "</div>\n        <button type=\"button\" class=\"btn\">View News</button>\n     </div> \n    </div>");
-  }).join('');
-}
+});
+var news = "<div style=\"min-height: 120px;\">\n <div class=\"collapse collapse-horizontal\" id=\"collapseWidthExample\">\n     <div class=\"card card-body py-4\" style=\"width: 300px;\">\n         This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.\n     </div>\n </div>\n</div>\n<p>\n <button class=\"btn btn-primary\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapseWidthExample\" aria-expanded=\"false\" aria-controls=\"collapseWidthExample\">\nToggle width collapse\n</button>\n</p>\n<div style=\"min-height: 120px;\">\n <div class=\"collapse collapse-horizontal\" id=\"collapseWidthExample\">\n     <div class=\"card card-body py-4\" style=\"width: 300px;\">\n         This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.\n     </div>\n </div>\n</div>";
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -165,7 +154,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61157" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51258" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
