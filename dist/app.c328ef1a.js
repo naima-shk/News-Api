@@ -118,14 +118,24 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"app.js":[function(require,module,exports) {
-var collapseWidthExample = document.getElementById('collapseWidthExample');
-var source = 'dawn-news';
-fetch('https://newsapi.org/v2/everything?q=tesla&from=2021-07-09&sortBy=publishedAt&apiKey=fb5eac411e5d40398d36bb4bb6d90bd2').then(function (response) {
-  console.log(response); // return response.json(); /*here the data  we are getting in form of json*/
-}).then(Array).catch(function (err) {
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+fetch('https://newsapi.org/v2/everything?q=tesla&apiKey=fb5eac411e5d40398d36bb4bb6d90bd2').then(function (response) {
+  console.log(response, 'Response');
+  return response.json();
+}).then(newsData).catch(function (err) {
   console.log(err);
 });
-var news = "<div style=\"min-height: 120px;\">\n <div class=\"collapse collapse-horizontal\" id=\"collapseWidthExample\">\n     <div class=\"card card-body py-4\" style=\"width: 300px;\">\n         This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.\n     </div>\n </div>\n</div>\n<p>\n <button class=\"btn btn-primary\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapseWidthExample\" aria-expanded=\"false\" aria-controls=\"collapseWidthExample\">\nToggle width collapse\n</button>\n</p>\n<div style=\"min-height: 120px;\">\n <div class=\"collapse collapse-horizontal\" id=\"collapseWidthExample\">\n     <div class=\"card card-body py-4\" style=\"width: 300px;\">\n         This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.\n     </div>\n </div>\n</div>";
+;
+
+function newsData(obj) {
+  var newsArray = obj.articles;
+  console.log(newsArray);
+  console.log(_typeof(newsArray));
+  document.getElementById("app").innerHTML = newsArray.map(function (news) {
+    return "\n    <div class=\"coloumn\">\n      <div class=\"card_content\">\n        <div class= \"title\">".concat(news.title, "</div>\n        <div class= \"description\">").concat(news.description, "</div>\n        <div class= \"images\">").concat(news.images, "</div>\n     </div> \n    </div>");
+  }).join('');
+}
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -154,7 +164,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51258" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51658" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
