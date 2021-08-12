@@ -94,8 +94,7 @@ body {
 div ul li {
     list-style: none;
     padding: 20px;
-    margin: 20px;
-    float: left;
+    margin-left: 43%;
     font-size: 25px;
     font: weight 90px;
 }
