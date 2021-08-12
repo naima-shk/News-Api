@@ -10,13 +10,13 @@ function newsData(obj) {
     let newsArray = obj.articles;
     console.log(newsArray);
     console.log(typeof newsArray);
-    document.getElementById("app").innerHTML = (newsArray.map(news =>
+    document.getElementById("main-container").innerHTML = (newsArray.map(news =>
         `
-    <div class="coloumn">
-      <div class="card_content">
-        <div class= "title">${news.title}</div>
-        <div class= "description">${news.description}</div>
-        <div class= "images">${news.images}</div>
+    
+      <div class="main">
+      <div class="content">
+      <img  src="${news.urlToImage}" />
+        <button id = "btnMore" onclick= "getElementById('moreInfo').innerHTML='author: ${news.author}<br> news title: ${news.title}<br> news description ${news.description}  '" >  More Details </button>
      </div> 
     </div>`
     ).join(''));

@@ -132,8 +132,8 @@ function newsData(obj) {
   var newsArray = obj.articles;
   console.log(newsArray);
   console.log(_typeof(newsArray));
-  document.getElementById("app").innerHTML = newsArray.map(function (news) {
-    return "\n    <div class=\"coloumn\">\n      <div class=\"card_content\">\n        <div class= \"title\">".concat(news.title, "</div>\n        <div class= \"description\">").concat(news.description, "</div>\n        <div class= \"images\">").concat(news.images, "</div>\n     </div> \n    </div>");
+  document.getElementById("main-container").innerHTML = newsArray.map(function (news) {
+    return "\n    \n      <div class=\"main\">\n      <div class=\"content\">\n      <img  src=\"".concat(news.urlToImage, "\" />\n        <button id = \"btnMore\" onclick= \"getElementById('moreInfo').innerHTML='author: ").concat(news.author, "<br> news title: ").concat(news.title, "<br> news description ").concat(news.description, "  '\" >  More Details </button>\n     </div> \n    </div>");
   }).join('');
 }
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -164,7 +164,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51658" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61275" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
