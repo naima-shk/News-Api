@@ -22,5 +22,6 @@ open index.html in your browser.
 https://github.com/naima-shk/News-App
 
 ## Live Link:
+https://naima-shk.github.io/News-Application
 
 
