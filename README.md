@@ -19,7 +19,7 @@
 open index.html in your browser.
 
 ## Repo Link:
-https://github.com/naima-shk/News-Application
+https://github.com/naima-shk/News-App
 
 ## Live Link:
 
