@@ -132,9 +132,15 @@ function newsData(obj) {
   var newsArray = obj.articles;
   console.log(newsArray);
   console.log(_typeof(newsArray));
+
+  for (news in newsArray) {
+    console.log(newsArray[news]);
+  }
+
   document.getElementById("main-container").innerHTML = newsArray.map(function (news) {
     return "\n    \n      <div class=\"main\">\n      <div class=\"content\">\n      <img  src=\"".concat(news.urlToImage, "\" />\n        <button id = \"btnMore\" onclick= \"getElementById('moreInfo').innerHTML='author: ").concat(news.author, "<br> news title: ").concat(news.title, "<br> news description ").concat(news.description, "  '\" >  More Details </button>\n     </div> \n    </div>");
-  }).join('');
+  } // newsArray.innerHTML = newsHtml;
+  ).join('');
 }
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -164,7 +170,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59345" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56513" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -10,6 +10,9 @@ function newsData(obj) {
     let newsArray = obj.articles;
     console.log(newsArray);
     console.log(typeof newsArray);
+    for (news in newsArray)
+        console.log(newsArray[news])
+
     document.getElementById("main-container").innerHTML = (newsArray.map(news =>
         `
     
@@ -19,5 +22,7 @@ function newsData(obj) {
         <button id = "btnMore" onclick= "getElementById('moreInfo').innerHTML='author: ${news.author}<br> news title: ${news.title}<br> news description ${news.description}  '" >  More Details </button>
      </div> 
     </div>`
+
+        // newsArray.innerHTML = newsHtml;
     ).join(''));
 }
